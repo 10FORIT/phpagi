@@ -168,7 +168,7 @@
       $type = null;
 
       do {
-        $buf = fgets($this->socket, 4096);
+        $buf = fgets($this->socket, 16384);
         if (false === $buf) {
           throw new Exception("Error reading from AMI socket");
         }

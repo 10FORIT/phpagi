@@ -1597,7 +1597,7 @@ class AGI
         $count = 0;
         do
         {
-            $str = trim(fgets($this->in, 4096));
+            $str = trim(fgets($this->in, 16384));
         } while($str == '' && $count++ < 5);
 
         if($count >= 5)
@@ -1614,11 +1614,11 @@ class AGI
         {
             $count = 0;
             $str = substr($str, 1) . "\n";
-            $line = fgets($this->in, 4096);
+            $line = fgets($this->in, 16384);
             while(substr($line, 0, 3) != $ret['code'] && $count < 5)
             {
                 $str .= $line;
-                $line = fgets($this->in, 4096);
+                $line = fgets($this->in, 16384);
                 $count = (trim($line) == '') ? $count + 1 : 0;
             }
             if($count >= 5)
