@@ -1598,7 +1598,7 @@ class AGI
         do
         {
             $str = trim(fgets($this->in, 16384));
-        } while($str == '' && $count++ < 5);
+        } while(($str == '' || $str == 'HANGUP') && $count++ < 5);
 
         if($count >= 5)
         {
