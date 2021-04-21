@@ -61,5 +61,5 @@ SUPPORT
 
 Support for phpagi is available from the project website. 
 
- * https://github.com/welltime/phpagi
+ * https://github.com/10forit/phpagi
 
